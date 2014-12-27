@@ -34,6 +34,24 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+
+        // listen to accelerometer events every 100ms
+        navigator.accelerometer.watchAcceleration(
+        // success handler
+        function (evt) {
+          document.getElementById('x').innerHTML = evt.x;
+          document.getElementById('y').innerHTML = evt.y;
+          document.getElementById('z').innerHTML = evt.z;
+        },
+
+        // error handler
+        function (e) {
+          alert("accel fail (" + e.name + ": " + e.message + ")");
+        },
+
+        // options: update every 100ms
+        { frequency: 100 }
+        );
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
