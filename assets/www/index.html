@@ -23,25 +23,32 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/ball.css" />
         <title>Hello World</title>
     </head>
     <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
+<!--        <div class="app">
+          <h1>Apache Cordova</h1>
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
-            </div>
-            
+            </div> --> 
+           
 
             <!-- display x,y,z accelerometer coordinates -->
-            <p style="color: white;">x: <span id="x">0</span></p>
+<!--             <p style="color: white;">x: <span id="x">0</span></p>
             <p style="color: white;">y: <span id="y">0</span></p>
             <p style="color: white;">z: <span id="z">0</span></p>
-        </div>
+
+        </div> -->
+
+        <div id="ball-sack"></div>
+
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/ball.js"></script>
         <script type="text/javascript">
+            window.ball = new ball();
             app.initialize();
         </script>
     </body>

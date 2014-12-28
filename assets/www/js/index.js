@@ -33,25 +33,9 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
-
-        // listen to accelerometer events every 100ms
-        navigator.accelerometer.watchAcceleration(
-        // success handler
-        function (evt) {
-          document.getElementById('x').innerHTML = evt.x;
-          document.getElementById('y').innerHTML = evt.y;
-          document.getElementById('z').innerHTML = evt.z;
-        },
-
-        // error handler
-        function (e) {
-          alert("accel fail (" + e.name + ": " + e.message + ")");
-        },
-
-        // options: update every 100ms
-        { frequency: 100 }
-        );
+        // app.receivedEvent('deviceready');
+        ball.start();
+        app.accelListenUpdate();
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -63,5 +47,31 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    },
+    // Accel Listen
+    accelListenUpdate: function() {
+        // listen to accelerometer events every 100ms
+        navigator.accelerometer.watchAcceleration(
+            // success handler
+            function (evt) {
+              // document.getElementById('x').innerHTML = evt.x;
+              // document.getElementById('y').innerHTML = evt.y;
+              // document.getElementById('z').innerHTML = evt.z;
+
+              var updateEvent = new CustomEvent('accelUpdate', {'detail':{
+                x: evt.x,
+                y: evt.y
+              }});
+              document.dispatchEvent(updateEvent);
+            },
+
+            // error handler
+            function (e) {
+              alert("accel fail (" + e.name + ": " + e.message + ")");
+            },
+
+            // options: update every 100ms
+            { frequency: 100 }
+        );
     }
 };

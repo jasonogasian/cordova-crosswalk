@@ -245,9 +245,11 @@
 /Users/jasonogasian/projects/cordova-crosswalk/assets/www/main.js \
 /Users/jasonogasian/projects/cordova-crosswalk/assets/www/master.css \
 /Users/jasonogasian/projects/cordova-crosswalk/assets/www/plugins \
+/Users/jasonogasian/projects/cordova-crosswalk/assets/www/css/ball.css \
 /Users/jasonogasian/projects/cordova-crosswalk/assets/www/css/index.css \
 /Users/jasonogasian/projects/cordova-crosswalk/assets/www/img/cordova.png \
 /Users/jasonogasian/projects/cordova-crosswalk/assets/www/img/logo.png \
+/Users/jasonogasian/projects/cordova-crosswalk/assets/www/js/ball.js \
 /Users/jasonogasian/projects/cordova-crosswalk/assets/www/js/index.js \
 /Users/jasonogasian/projects/cordova-crosswalk/assets/www/plugins/org.apache.cordova.device-motion \
 /Users/jasonogasian/projects/cordova-crosswalk/assets/www/plugins/org.apache.cordova.device-motion/www \

@@ -1,0 +1,15 @@
+#ball-sack {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-color: #444;
+}
+
+.bouncing-ball {
+	background-color: #D36;
+	box-shadow: 2px 2px 2px #222;
+	position: absolute;
+
+  -webkit-transform: translate(50%, 50%);
+  -webkit-transition: all, 5s;
+}
